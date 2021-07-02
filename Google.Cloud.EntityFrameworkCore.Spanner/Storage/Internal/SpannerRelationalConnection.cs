@@ -45,9 +45,6 @@ namespace Google.Cloud.EntityFrameworkCore.Spanner.Storage.Internal
         public MutationUsage MutationUsage { get; }
 
         /// <inheritdoc />
-        public override bool IsMultipleActiveResultSetsEnabled => true;
-
-        /// <inheritdoc />
         protected override DbConnection CreateDbConnection() => new SpannerRetriableConnection(new SpannerConnection(ConnectionString));
 
         /// <summary>

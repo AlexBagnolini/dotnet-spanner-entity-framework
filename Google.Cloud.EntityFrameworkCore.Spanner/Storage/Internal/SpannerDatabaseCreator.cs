@@ -155,7 +155,7 @@ namespace Google.Cloud.EntityFrameworkCore.Spanner.Storage.Internal
         /// <inheritdoc />
         public override void CreateTables()
         {
-            var operations = Dependencies.ModelDiffer.GetDifferences(null, Dependencies.Model);
+            var operations = Dependencies.ModelDiffer.GetDifferences(null, Dependencies.Model.GetRelationalModel());
             var commands = Dependencies.MigrationsSqlGenerator.Generate(operations, Dependencies.Model);
 
             Dependencies.MigrationCommandExecutor.ExecuteNonQuery(commands, _connection);
@@ -164,7 +164,7 @@ namespace Google.Cloud.EntityFrameworkCore.Spanner.Storage.Internal
         /// <inheritdoc />
         public override async Task CreateTablesAsync(CancellationToken cancellationToken = default)
         {
-            var operations = Dependencies.ModelDiffer.GetDifferences(null, Dependencies.Model);
+            var operations = Dependencies.ModelDiffer.GetDifferences(null, Dependencies.Model.GetRelationalModel());
             var commands = Dependencies.MigrationsSqlGenerator.Generate(operations, Dependencies.Model);
 
             await Dependencies.MigrationCommandExecutor.ExecuteNonQueryAsync(commands, _connection,
