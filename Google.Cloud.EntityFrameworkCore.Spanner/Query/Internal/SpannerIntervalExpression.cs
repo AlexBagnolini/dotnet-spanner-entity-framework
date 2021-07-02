@@ -35,7 +35,7 @@ namespace Google.Cloud.EntityFrameworkCore.Spanner.Query.Internal
             _intervalNameFragment = _sqlExpressionFactory.Fragment($" {_intervalName}");
         }
 
-        public override void Print(ExpressionPrinter expressionPrinter)
+        protected override void Print(ExpressionPrinter expressionPrinter)
         {
         }
 

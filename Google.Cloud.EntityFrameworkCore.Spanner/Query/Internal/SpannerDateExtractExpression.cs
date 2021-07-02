@@ -34,7 +34,7 @@ namespace Google.Cloud.EntityFrameworkCore.Spanner.Query.Internal
             _fromFragment = _sqlExpressionFactory.Fragment($"{_dateTimePartName} FROM ");
         }
 
-        public override void Print(ExpressionPrinter expressionPrinter)
+        protected override void Print(ExpressionPrinter expressionPrinter)
         {
         }
 

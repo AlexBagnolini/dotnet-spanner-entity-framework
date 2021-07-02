@@ -14,6 +14,8 @@
 
 using Google.Cloud.EntityFrameworkCore.Spanner.Extensions;
 using JetBrains.Annotations;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Update;
@@ -33,7 +35,8 @@ namespace Google.Cloud.EntityFrameworkCore.Spanner.Update.Internal
     /// </summary>
     public class SpannerBatchExecutor : BatchExecutor
     {
-        public SpannerBatchExecutor([NotNull] ICurrentDbContext currentContext, [NotNull] IExecutionStrategyFactory executionStrategyFactory) : base(currentContext, executionStrategyFactory)
+        public SpannerBatchExecutor([NotNull] ICurrentDbContext currentContext, IDiagnosticsLogger<DbLoggerCategory.Update> updateLogger) 
+            : base(currentContext, updateLogger)
         {
         }
 

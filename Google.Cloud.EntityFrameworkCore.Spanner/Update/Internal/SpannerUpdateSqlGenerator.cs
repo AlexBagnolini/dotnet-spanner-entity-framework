@@ -119,11 +119,11 @@ namespace Google.Cloud.EntityFrameworkCore.Spanner.Update.Internal
 
             AppendInsertCommandHeader(commandStringBuilder, name, schema, writeOperations);
             AppendValuesHeader(commandStringBuilder, writeOperations);
-            AppendValues(commandStringBuilder, writeOperations);
+            AppendValues(commandStringBuilder, name, schema, writeOperations);
             for (var i = 1; i < modificationCommands.Count; i++)
             {
                 commandStringBuilder.AppendLine(",");
-                AppendValues(commandStringBuilder, modificationCommands[i].ColumnModifications.Where(o => o.IsWrite).ToList());
+                AppendValues(commandStringBuilder, name, schema, modificationCommands[i].ColumnModifications.Where(o => o.IsWrite).ToList());
             }
 
             commandStringBuilder.AppendLine(SqlGenerationHelper.StatementTerminator);

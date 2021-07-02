@@ -30,48 +30,48 @@ namespace Google.Cloud.EntityFrameworkCore.Spanner.Migrations.Internal
             : base(dependencies)
         {
         }
+        
+        //public override IEnumerable<IAnnotation> For(IProperty property)
+        //{
+        //    var baseAnnotations = base.For(property);
 
-        public override IEnumerable<IAnnotation> For(IProperty property)
-        {
-            var baseAnnotations = base.For(property);
+        //    // Commit Timestamp
+        //    var commitTimestampAnnotation = property.FindAnnotation(SpannerAnnotationNames.UpdateCommitTimestamp);
+        //    if (commitTimestampAnnotation != null)
+        //    {
+        //        baseAnnotations = baseAnnotations.Concat(new[] { commitTimestampAnnotation });
+        //    }
 
-            // Commit Timestamp
-            var commitTimestampAnnotation = property.FindAnnotation(SpannerAnnotationNames.UpdateCommitTimestamp);
-            if (commitTimestampAnnotation != null)
-            {
-                baseAnnotations = baseAnnotations.Concat(new[] { commitTimestampAnnotation });
-            }
+        //    return baseAnnotations;
+        //}
 
-            return baseAnnotations;
-        }
+        //public override IEnumerable<IAnnotation> For(IEntityType entityType)
+        //{
+        //    var baseAnnotations = base.For(entityType);
+        //    var interleaveInParentAnnotation = entityType.FindAnnotation(SpannerAnnotationNames.InterleaveInParent);
+        //    return interleaveInParentAnnotation == null ? baseAnnotations
+        //        : baseAnnotations.Concat(new[] {
+        //          interleaveInParentAnnotation,
+        //          entityType.FindAnnotation(SpannerAnnotationNames.InterleaveInParentOnDelete)
+        //      });
+        //}
 
-        public override IEnumerable<IAnnotation> For(IEntityType entityType)
-        {
-            var baseAnnotations = base.For(entityType);
-            var interleaveInParentAnnotation = entityType.FindAnnotation(SpannerAnnotationNames.InterleaveInParent);
-            return interleaveInParentAnnotation == null ? baseAnnotations
-                : baseAnnotations.Concat(new[] {
-                  interleaveInParentAnnotation,
-                  entityType.FindAnnotation(SpannerAnnotationNames.InterleaveInParentOnDelete)
-              });
-        }
+        //public override IEnumerable<IAnnotation> For(IIndex index)
+        //{
+        //    var indexAnnotations = base.For(index);
+        //    var nullFilteredIndexAnnotation = index.FindAnnotation(SpannerAnnotationNames.IsNullFilteredIndex);
+        //    if (nullFilteredIndexAnnotation != null)
+        //    {
+        //        indexAnnotations = indexAnnotations.Concat(new[] { nullFilteredIndexAnnotation });
+        //    }
 
-        public override IEnumerable<IAnnotation> For(IIndex index)
-        {
-            var indexAnnotations = base.For(index);
-            var nullFilteredIndexAnnotation = index.FindAnnotation(SpannerAnnotationNames.IsNullFilteredIndex);
-            if (nullFilteredIndexAnnotation != null)
-            {
-                indexAnnotations = indexAnnotations.Concat(new[] { nullFilteredIndexAnnotation });
-            }
+        //    var storingIndexAnnotation = index.FindAnnotation(SpannerAnnotationNames.Storing);
+        //    if (storingIndexAnnotation != null)
+        //    {
+        //        indexAnnotations = indexAnnotations.Concat(new[] { storingIndexAnnotation });
+        //    }
 
-            var storingIndexAnnotation = index.FindAnnotation(SpannerAnnotationNames.Storing);
-            if (storingIndexAnnotation != null)
-            {
-                indexAnnotations = indexAnnotations.Concat(new[] { storingIndexAnnotation });
-            }
-
-            return indexAnnotations;
-        }
+        //    return indexAnnotations;
+        //}
     }
 }

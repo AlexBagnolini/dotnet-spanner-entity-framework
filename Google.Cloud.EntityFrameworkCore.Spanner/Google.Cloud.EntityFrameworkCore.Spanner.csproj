@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <Description>Google Cloud Spanner database provider for Entity Framework Core.</Description>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <AssemblyName>Google.Cloud.EntityFrameworkCore.Spanner</AssemblyName>
     <RootNamespace>Google.Cloud.EntityFrameworkCore.Spanner</RootNamespace>
     <LangVersion>latest</LangVersion>
@@ -20,8 +20,8 @@
   <ItemGroup>
     <PackageReference Include="Google.Cloud.Spanner.Data" Version="3.4.0" />
     <PackageReference Include="JetBrains.Annotations" Version="2020.3.0" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.0" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.7" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.7" />
     <PackageReference Include="OpenTelemetry.Api" Version="1.0.1" />
   </ItemGroup>
 

@@ -35,7 +35,7 @@ namespace Google.Cloud.EntityFrameworkCore.Spanner.Query.Internal
             _timezoneFragment = _sqlExpressionFactory.Fragment(" AT TIME ZONE 'UTC'");
         }
 
-        public override void Print(ExpressionPrinter expressionPrinter)
+        protected override void Print(ExpressionPrinter expressionPrinter)
         {
         }
 
