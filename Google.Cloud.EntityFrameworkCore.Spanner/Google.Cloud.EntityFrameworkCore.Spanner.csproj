@@ -2,19 +2,19 @@
 
   <PropertyGroup>
     <Description>Google Cloud Spanner database provider for Entity Framework Core.</Description>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <AssemblyName>Google.Cloud.EntityFrameworkCore.Spanner</AssemblyName>
     <RootNamespace>Google.Cloud.EntityFrameworkCore.Spanner</RootNamespace>
     <LangVersion>latest</LangVersion>
     <Authors>Google LLC</Authors>
     <Copyright>Copyright 2021 Google LLC</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
-    <PackageProjectUrl>https://github.com/cloudspannerecosystem/dotnet-spanner-entity-framework</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/cloudspannerecosystem/dotnet-spanner-entity-framework</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/AlexBagnolini/dotnet-spanner-entity-framework</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/AlexBagnolini/dotnet-spanner-entity-framework</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>spanner;entity framework;Google;Cloud;efcore</PackageTags>
     <PackageIcon>NuGetIcon.png</PackageIcon>
-    <Version>1.0.0-beta</Version>
+    <Version>1.0.3-beta</Version>
   </PropertyGroup>
 
   <ItemGroup>
